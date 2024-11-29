@@ -44,6 +44,6 @@ std::string sparer::holeGebDatum(void)
 {
 	string zurueck;
 	zurueck = person::holeGebDatum();
-	zurueck.append(" :Hallo Welt ");
+	zurueck.append(" :Das ist mein Geburtsdatum ");
 	return zurueck;
 }

@@ -2,33 +2,16 @@
 #include "Person.h"
 #include "Chef.h"
 
+/*Hauptaufgabe: Wir entwickeln uns eine kleine Firmen-Verwaltungs-SW um 
+				verschiedene Rollen einer Firma nach und nach mit Leben 
+				zu befüllen.
+				Zu diesem Zweck entwickeln wir uns im ersten Schritt nach 
+				und nach einen Ableitungsbaum der verschiedenen Rollen
+				beinhaltet.
+				DIeses Main dient zum Test der verschiedenen Funktionalitäten.*/
 
 
-int main(void)
-{
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#if 0
+#if 1
 int main(void)
 {
 	person Person1;//hier wird der Standardkonstruktor gerufen
@@ -38,11 +21,11 @@ int main(void)
 	chef Scheffe;
 	lehrling stift;
 
-	sparer Landerer("Karl Napf", "Panoramaweg 1", "07.09.1969");
-	sparer hans;
+//	sparer Landerer("Karl Napf", "Panoramaweg 1", "07.09.1969");
+//	sparer hans;
 
-	hans.setzeDaten("Hans Dampf", "Postweg 101", "31.12.1996");
-	std::cout << hans.holeGebDatum() << "\n";
+//	hans.setzeDaten("Hans Dampf", "Postweg 101", "31.12.1996");
+//	std::cout << hans.holeGebDatum() << "\n";
 
 	Person3.person::setzeDaten("Hans Dampf", "Postweg 101", "31.12.1996");
 	Person4.setzeDaten("Franz dumpf", "Postweg 102", "01.12.1986");

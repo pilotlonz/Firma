@@ -34,7 +34,7 @@ void aussendienst::setzeZulage(double zulage)
 }
 
 
-innendienst::innendienst() : pSA_Schuhe(false), pSA_Brille(false), pSA_Handschuhe(false), pSA_Warnweste(false), pSA_ESD(false)
+innendienst::innendienst() : pSA_Schuhe(false), pSA_Brille(false), pSA_Handschuhe(false), pSA_Warnweste(false), pSA_ESD(false), pSA_PSA(false)
 {
 }
 innendienst::~innendienst()
@@ -42,7 +42,7 @@ innendienst::~innendienst()
 
 }
 
-void innendienst::setzePSA(void)
+void innendienst::setzePSA(bool PSA, bool ESD)
 {
 	pSA_ESD = true;
 
@@ -57,11 +57,13 @@ werkstatt::~werkstatt()
 {
 
 }
-void werkstatt::setzePSA(void)
+void werkstatt::setzePSA(bool handschuhe, bool brille, bool schuhe)
 {
-	pSA_Schuhe = true;
-	pSA_Brille = true;
-	pSA_Handschuhe = true;
+	pSA_Schuhe = schuhe;
+	pSA_Brille = brille;
+	pSA_Handschuhe = handschuhe;
+
+	innendienst::setzePSA(true, true);
 }
 
 lager::lager()

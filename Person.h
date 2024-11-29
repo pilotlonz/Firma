@@ -20,6 +20,15 @@ protected:
 
 };
 
+
+
+
+
+
+
+
+
+
 class sparer : public person
 {
 public:

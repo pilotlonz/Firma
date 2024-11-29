@@ -30,8 +30,9 @@ class innendienst : public arbeitnehmer
 public: 
 	innendienst();
 	~innendienst();
-	void setzePSA(void);
-	bool pSA_Schuhe, pSA_Brille, pSA_Handschuhe, pSA_Warnweste, pSA_ESD;
+	void setzePSA(bool PSA, bool ESD);
+protected:
+	bool pSA_Schuhe, pSA_Brille, pSA_Handschuhe, pSA_Warnweste, pSA_ESD, pSA_PSA;
 private:
 
 };
@@ -41,7 +42,7 @@ class werkstatt : public innendienst
 public:
 	werkstatt();
 	~werkstatt();
-	void setzePSA(void);
+	void setzePSA(bool handschuhe, bool brille, bool schuhe);
 
 private:
 
