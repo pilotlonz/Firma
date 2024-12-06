@@ -65,6 +65,13 @@ public:
 private:
 };
 
+class sekretaerin : public buero
+{
+public:
+	sekretaerin();
+	~sekretaerin();
+private:
+};
 class lehrling :public werkstatt, public lager, public buero
 {
 public: 

@@ -18,6 +18,14 @@ void arbeitnehmer::setzeGehalt(double Gehalt)
 	gehalt = Gehalt;
 }
 
+sekretaerin::sekretaerin()
+{
+
+}
+sekretaerin::~sekretaerin()
+{
+
+}
 
 
 aussendienst::aussendienst() : gehaltszulage(0.0)

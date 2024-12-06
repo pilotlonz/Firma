@@ -1,7 +1,7 @@
 #include "Person.h"
 
 //Standardkonstruktor
-person::person() : name(""), adresse(""), gebDatum("")
+person::person() : name(""), adresse(""), gebDatum(""), geschlecht("")
 {
 
 }
@@ -17,12 +17,12 @@ person::~person()
 {
 
 }
-void person::setzeDaten(std::string Name, std::string Adresse, std::string GebDatum)
+void person::setzeDaten(std::string Name, std::string Adresse, std::string GebDatum, std::string Geschlecht)
 {
 	name = Name;
 	adresse = Adresse;
 	gebDatum = GebDatum;
-
+	geschlecht = Geschlecht;
 }
 //Überladene Funktion
 void person::setzeDaten(std::string GebDatum)
@@ -34,7 +34,19 @@ std::string person::holeGebDatum(void)
 {
 	return gebDatum;
 }
+std::string person::holeNamen(void)
+{
+	return name;
+}
 
+std::string person::holeAdresse(void)
+{
+	return adresse;
+}
+std::string person::holeGeschlecht(void)
+{
+	return geschlecht;
+}
 
 using namespace std;
 sparer::sparer(){}
