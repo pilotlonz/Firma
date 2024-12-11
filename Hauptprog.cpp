@@ -10,8 +10,10 @@
 				beinhaltet.
 				DIeses Main dient zum Test der verschiedenen Funktionalitäten.*/
 
+// Funktion zur Verwaltung der Mitarbeiterliste
+void angestelltenverwaltung();
 
-#if 1
+#if 0
 int main(void)
 {
 	person Person1;//hier wird der Standardkonstruktor gerufen
@@ -59,5 +61,76 @@ int main(void)
 
 	
 }
-
+#else
+int main(void)
+{
+    angestelltenverwaltung();
+}
 #endif
+
+
+// Funktion zur Verwaltung der Mitarbeiterliste
+void angestelltenverwaltung() {
+    std::vector<werkstatt> mitarbeiterListe;
+    int auswahl;
+
+    do {
+        std::cout << "\nAngestelltenverwaltung:\n";
+        std::cout << "1. Mitarbeiter hinzufügen\n";
+        std::cout << "2. Mitarbeiter anzeigen\n";
+        std::cout << "3. Mitarbeiter entfernen\n";
+        std::cout << "4. Beenden\n";
+        std::cout << "Ihre Auswahl: ";
+        std::cin >> auswahl;
+
+        switch (auswahl) {
+        case 1: {
+            int id;
+            std::string name, abteilung;
+            std::cout << "Mitarbeiter ID: ";
+            std::cin >> id;
+            std::cin.ignore(); // Eingabepuffer leeren
+            std::cout << "Name: ";
+            std::getline(std::cin, name);
+            std::cout << "Abteilung: ";
+            std::getline(std::cin, abteilung);
+
+            mitarbeiterListe.emplace_back(id, name, abteilung);
+            std::cout << "Mitarbeiter hinzugefügt!\n";
+            break;
+        }
+        case 2: {
+            std::cout << "\nListe der Mitarbeiter:\n";
+            for (const auto& mitarbeiter : mitarbeiterListe) {
+                mitarbeiter.anzeigen();
+            }
+            break;
+        }
+        case 3: {
+            int id;
+            std::cout << "ID des zu entfernenden Mitarbeiters: ";
+            std::cin >> id;
+
+            auto it = std::remove_if(mitarbeiterListe.begin(), mitarbeiterListe.end(),
+                [id](const Mitarbeiter& mitarbeiter) {
+                    return mitarbeiter.getId() == id;
+                });
+
+            if (it != mitarbeiterListe.end()) {
+                mitarbeiterListe.erase(it, mitarbeiterListe.end());
+                std::cout << "Mitarbeiter entfernt!\n";
+            }
+            else {
+                std::cout << "Mitarbeiter mit ID " << id << " nicht gefunden!\n";
+            }
+            break;
+        }
+        case 4:
+            std::cout << "Programm beendet.\n";
+            break;
+        default:
+            std::cout << "Ungültige Auswahl. Bitte erneut versuchen.\n";
+        }
+
+    } while (auswahl != 4);
+}
